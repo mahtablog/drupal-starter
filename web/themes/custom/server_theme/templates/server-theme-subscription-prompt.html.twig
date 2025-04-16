@@ -1,0 +1,16 @@
+<div class="og-subscription-prompt">
+  <p>
+    Hi {{ user_name }},
+    {# {% set link_classes = link['#attributes']['class'] is not empty ? link['#attributes']['class'] : [] %} #}
+    {% set link_classes = [
+      'border-b', 
+      'border-blue-500',
+      'hover:border-b-gray-400',
+      'py-2', 
+      'hover:bg-blue-600',
+      'hover:text-white'
+    ] %}
+    {{ link|set_attribute('class', link_classes) }}
+    if you would like to subscribe to this group called {{ group_name }}.
+  </p>
+</div>

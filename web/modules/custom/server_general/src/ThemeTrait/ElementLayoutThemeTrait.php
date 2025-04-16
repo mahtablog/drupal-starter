@@ -45,6 +45,22 @@ trait ElementLayoutThemeTrait {
     ];
   }
 
+    /**
+   * Build Main wihtout sidebar layout.
+   *
+   * @param array $main
+   *   The main render array.
+   *
+   * @return array
+   *   The render array.
+   */
+  protected function buildElementLayoutMainWihtoutSidebar(array $main) {
+    return [
+      '#theme' => 'server_theme_element_layout__main_without_sidebar',
+      '#main' => $main,
+    ];
+  }
+
   /**
    * Build a Paragraph title and content element layout.
    *

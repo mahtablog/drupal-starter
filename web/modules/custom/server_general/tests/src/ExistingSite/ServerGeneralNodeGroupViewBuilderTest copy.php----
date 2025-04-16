@@ -1,0 +1,54 @@
+<?php
+namespace Drupal\Tests\server_general\ExistingSite;
+
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+use Drupal\og\Og;
+use Symfony\Component\HttpFoundation\Response;
+use Drupal\og\OgGroupAudienceHelperInterface;
+
+/**
+ * Test for Node Group view builder.
+ */
+class ServerGeneralNodeGroupViewBuilderTestaa extends ServerGeneralTestBase {
+
+  /**
+   * Tests the group page displays a subscription prompt.
+   */
+  public function testGroupSubscriptionPromptShownForNonMember() {
+    // Create an authenticated user.
+    $user = $this->createUser([], NULL, TRUE);
+    $this->drupalLogin($user);
+
+    // Create a group node.
+    $group = Node::create([
+      'type' => 'group', // Assuming the content type is "group".
+      'title' => 'Test Group',
+      'body' => [
+        'value' => 'This is a test group.',
+        'format' => 'full_html',
+      ],
+      'uid' => $user->id(),
+      'status' => 1,
+    ]);
+    $group->save();
+
+    // Make the node a group.
+    Og::createField(OgGroupAudienceHelperInterface::DEFAULT_FIELD,'node', 'group');
+
+    // Check the group's URL.
+    $url = $group->toUrl(); // Corrected the reference to $group
+
+    // Log in the user.
+    $this->drupalLogin($user);
+
+    // Visit the group's page.
+    $this->drupalGet($url);
+    $this->assertSession()->statusCodeEquals(200);
+
+    // Check if the subscription prompt is displayed for non-members.
+    $this->assertSession()->pageTextContains('Hi ' . $user->getDisplayName() . ',');
+    $this->assertSession()->pageTextContains('click here if you would like to subscribe');
+  }
+
+}
