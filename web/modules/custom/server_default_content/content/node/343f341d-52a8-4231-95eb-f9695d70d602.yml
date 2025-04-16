@@ -47,7 +47,7 @@ default:
       tag: link
       attributes:
         rel: canonical
-        href: 'https://drupal-starter.ddev.site:4443/node/15'
+        href: 'https://drupal-starter.ddev.site:4443/community/drupal-university'
     -
       tag: meta
       attributes:
@@ -55,7 +55,7 @@ default:
         content: 'Drupal University'
   path:
     -
-      alias: ''
+      alias: /community/drupal-university
       langcode: en
       pathauto: 0
   content_translation_source:

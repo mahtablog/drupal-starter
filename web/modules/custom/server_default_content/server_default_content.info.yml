@@ -25,6 +25,7 @@ default_content:
     - fdfc2b97-a826-4887-8218-fb3a3add5f72 # Pandemic Moves Education Online
     #Group
     - 343f341d-52a8-4231-95eb-f9695d70d602 # Drupal University
+    - 3cf2e226-d66c-441d-95dd-dd7869e25585 # Drupal Forum
 
   menu_link_content:
     - 5e0d5c87-84f9-4c98-abaa-d4c2df6eda73 # About
