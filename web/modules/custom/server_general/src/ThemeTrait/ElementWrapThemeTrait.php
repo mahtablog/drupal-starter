@@ -76,14 +76,11 @@ trait ElementWrapThemeTrait {
    * @param string|null $align
    *   Determine if flex should also have an alignment. Possible values are
    *   `start`, `center`, `end` or NULL to have no change.
-   * * @param string|null $width
-   *   Determine if flex should also have an width. Possible values are
-   *   `full`, `half` or NULL to have no change.
    *
    * @return array
    *   Render array.
    */
-  protected function wrapContainerVerticalSpacing(array $element, ?string $align = NULL, ?string $width = NULL): array {
+  protected function wrapContainerVerticalSpacing(array $element, ?string $align = NULL): array {
     $element = $this->filterEmptyElements($element);
     if (empty($element)) {
       // Element is empty, so no need to wrap it.
@@ -94,7 +91,6 @@ trait ElementWrapThemeTrait {
       '#theme' => 'server_theme_container_vertical_spacing',
       '#items' => $element,
       '#align' => $align,
-      '#width' => $width,
     ];
   }
 
@@ -605,85 +601,6 @@ trait ElementWrapThemeTrait {
     }
 
     return array_filter($element);
-  }
-
-  protected function wrapEmail(string $emailid, $label = "Email"): array {
-    $element = $this->filterEmptyElements($emailid);
-    if (empty($element) ) {
-      return [];
-    }
-    return [
-      '#theme' => 'server_theme__email',
-      '#emailid' => $emailid,
-      '#label' => $label,
-    ];
-  }
-
-  protected function wrapCall(string $phonenumber, $label = "Call"): array {
-    $element = $this->filterEmptyElements($phonenumber);
-    if (empty($element) ) {
-      return [];
-    }
-    return [
-      '#theme' => 'server_theme__call',
-      '#phone' => $phonenumber,
-      '#label' => $label,
-    ];
-  }
-
-  /**
-   * Wrap Email and Call style.
-   *
-   * @param array|string|\Drupal\Core\StringTranslation\TranslatableMarkup $element
-   *   The render array, string or a TranslatableMarkup object.
-   *
-   * @return array
-   *   Render array.
-   */
-  protected function wrapEmailCall(array|TranslatableMarkup $element): array {
-    $element = $this->filterEmptyElements($element);
-    if (empty($element) ) {
-      return [];
-    }
-    if(!empty($element['email'])) {
-      $element['email'] = $this->wrapEmail($element['email']);
-    }
-    if(!empty($element['call'])) {
-      $element['call'] = $this->wrapCall($element['call']);
-    }
-
-    return [
-      '#theme' => 'server_theme__email_call',
-      '#element' => $element,
-    ];
-  }
-
-  /**
-   * Wrap an element with text color.
-   *
-   * @param array|string|\Drupal\Core\StringTranslation\TranslatableMarkup $element
-   *   The render array, string or a TranslatableMarkup object.
-   * @param string $color
-   *   The font color. Possible values are: `light-gray`, `gray` and
-   *   `dark-gray`.
-   *
-   * @return array
-   *   Render array.
-   */
-  protected function wrapTextBackground(array|string|TranslatableMarkup $element, string $bg_color): array {
-    if (is_array($element)) {
-      $element = $this->filterEmptyElements($element);
-    }
-    if (empty($element)) {
-      // Element is empty, so no need to wrap it.
-      return [];
-    }
-
-    return [
-      '#theme' => 'server_theme_text_decoration__bg_color',
-      '#element' => $element,
-      '#bg_color' => $bg_color
-    ];
   }
 
 }

@@ -50,11 +50,10 @@ trait InnerElementLayoutThemeTrait {
    * @return array
    *   Render array.
    */
-  protected function buildInnerElementLayoutCentered(array $items, ?string $setPadding = NULL): array {
+  protected function buildInnerElementLayoutCentered(array $items): array {
     return [
       '#theme' => 'server_theme_inner_element_layout__centered',
-      '#items' => $this->wrapContainerVerticalSpacing($items, 'center', 'full'),
-      '#padding' => $setPadding,
+      '#items' => $this->wrapContainerVerticalSpacing($items, 'center'),
     ];
   }
 
