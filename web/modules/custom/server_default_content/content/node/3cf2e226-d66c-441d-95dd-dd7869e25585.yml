@@ -1,0 +1,74 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 3cf2e226-d66c-441d-95dd-dd7869e25585
+  bundle: group
+  default_langcode: en
+  depends:
+    11318276-1099-48d3-ae54-1e4746558d2e: user
+    83cadac4-926d-4f6b-b25b-6d504348e0f2: media
+default:
+  revision_uid:
+    -
+      entity: 11318276-1099-48d3-ae54-1e4746558d2e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 11318276-1099-48d3-ae54-1e4746558d2e
+  title:
+    -
+      value: 'Drupal Forum'
+  created:
+    -
+      value: 1744784237
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Drupal Forum | Drupal Starter'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "Introducing the \"Drupal Forum\" Community Group!Join our new Drupal Forum community — a dedicated space for developers, designers, site builders, and enthusiasts to connect, collaborate, and grow together. Whether you're just starting out or have years of experience, this group is your go-to hub for discussions, questions, and sharing knowledge around everything Drupal.Ask questionsShare expertiseDiscover best practicesContribute to the Drupal ecosystemLet’s build better, together. Welcome aboard!\_"
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://drupal-starter.ddev.site:4443/community/drupal-forum'
+    -
+      tag: meta
+      attributes:
+        property: 'og:title'
+        content: 'Drupal Forum'
+  path:
+    -
+      alias: /community/drupal-forum
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p><strong>Introducing the "Drupal Forum" Community Group!</strong></p><p>Join our new Drupal Forum community — a dedicated space for developers, designers, site builders, and enthusiasts to connect, collaborate, and grow together. Whether you''re just starting out or have years of experience, this group is your go-to hub for discussions, questions, and sharing knowledge around everything Drupal.</p><ul><li>Ask questions<br>Share expertise<br>Discover best practices<br>Contribute to the Drupal ecosystem</li></ul><p>Let’s build better, together. Welcome aboard!&nbsp;</p><p>#Drupal #DrupalCommunity #OpenSource #WebDevelopment #DrupalForum</p>'
+      format: basic_html
+      summary: ''
+  field_featured_image:
+    -
+      entity: 83cadac4-926d-4f6b-b25b-6d504348e0f2

@@ -38,6 +38,8 @@ function server_theme_theme() {
       'items' => [],
       // Possible values are `start`, `center`, `end` or NULL to have no change.
       'align' => NULL,
+      // Possible values are `full`, `half` or NULL for no value.
+      'width' => NULL,
     ],
   ];
 
@@ -145,6 +147,13 @@ function server_theme_theme() {
     ],
   ];
 
+  // Used to place elements inside a main area, and other elements in a sidebar.
+  $info['server_theme_element_layout__main_without_sidebar'] = [
+    'variables' => [
+      'main' => [],
+    ],
+  ];
+
   // Split the screen in half. First the image, then content. Used for example
   // for a "Quote" element.
   $info['server_theme_element_layout__split_image_and_content'] = [
@@ -225,6 +234,7 @@ function server_theme_theme() {
     'variables' => [
       // A render array.
       'items' => NULL,
+      'padding' => NULL,
     ],
   ];
 
@@ -511,6 +521,41 @@ function server_theme_theme() {
     'variables' => [],
   ];
 
+  $info['server_theme_subscription_prompt'] = [
+    'variables' => [
+      'user_name' => NULL,
+      'link' => NULL,
+      'group_name' => NULL,
+    ],
+  ];
+
+  $info['server_theme__email'] = [
+    'variables' => [
+      'emailid' => NULL,
+      'label' => NULL,
+    ],
+  ];
+
+  $info['server_theme__call'] = [
+    'variables' => [
+      'phone' => NULL,
+      'label' => NULL,
+    ],
+  ];
+  // Wrap Email and Call style.
+  $info['server_theme__email_call'] = [
+    'variables' => [
+      'element' => [],
+    ],
+  ];
+  // Wrapper for a text, adding background color.
+  $info['server_theme_text_decoration__bg_color'] = [
+    'variables' => [
+      'element' => [],
+      'bg_color' => NULL,
+    ],
+  ];
+  
   return $info;
 }
 
