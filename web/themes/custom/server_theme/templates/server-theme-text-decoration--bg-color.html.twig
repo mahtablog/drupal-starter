@@ -1,0 +1,5 @@
+{% import '@server_theme/templates/server-theme-bg-color-base.html.twig' as bgColorBase %}
+
+<div class="py-1 px-2 rounded-xl {{ bgColorBase.getBgColor(bg_color) }}">
+  {{ element }}
+</div>

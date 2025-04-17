@@ -2,6 +2,8 @@
 {% macro getBgColor(color) %}
   {% if color == 'light-gray' %}
     bg-gray-100
+  {% elseif color == 'light-green' %}
+    bg-green-100
   {% else %}
     bg-transparent
   {% endif %}

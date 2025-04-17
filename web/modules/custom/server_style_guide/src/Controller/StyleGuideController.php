@@ -31,6 +31,7 @@ use Drupal\server_general\ThemeTrait\TitleAndLabelsThemeTrait;
 use Drupal\server_general\WebformTrait;
 use Drupal\server_style_guide\ThemeTrait\StyleGuideElementWrapThemeTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\server_general\ThemeTrait\PersonCardsThemeTrait;
 
 /**
  * Provides route responses for the style-guide module.
@@ -62,6 +63,7 @@ class StyleGuideController extends ControllerBase {
   use TagThemeTrait;
   use TitleAndLabelsThemeTrait;
   use WebformTrait;
+  use PersonCardsThemeTrait;
 
 
   /**
@@ -188,6 +190,9 @@ class StyleGuideController extends ControllerBase {
     $element = $this->getPeopleTeasers();
     $build[] = $this->wrapElementNoContainer($element, 'Element: People teasers');
 
+    $element = $this->getPeopleCard();
+    $build[] = $this->wrapElementNoContainer($element, 'Element: Person card');
+
     $element = $this->getQuote();
     $build[] = $this->wrapElementNoContainer($element, 'Element: Quote');
 
@@ -285,6 +290,107 @@ class StyleGuideController extends ControllerBase {
     }
 
     return $this->buildElementPeopleTeasers(
+      $this->getRandomTitle(),
+      $this->buildProcessedText('This is a directory list of awesome people'),
+      $items,
+    );
+  }
+
+  /**
+   * Get People teasers element.
+   *
+   * @return array
+   *   Render array.
+   */
+  protected function getPeopleCard(): array {
+    $items = [];
+
+    $namesList = [
+      [
+        'name' => 'Jon Doe',
+        'designation' => 'General Director',
+        'role' => 'Leadership',
+        'email' => 'jon.doe@example.com',
+        'call' => '123-456-7890',
+      ],
+      [
+        'name' => 'Smith Allen',
+        'designation' => 'Assistant to The Regional Manager',
+        'role' => 'Executive Assistant',
+        'email' => 'smith.allen@example.com',
+        'call' => '123-456-7891',
+      ],
+      [
+        'name' => 'David Bowie',
+        'designation' => 'Project Manager',
+        'role' => 'Management',
+        'email' => 'david.bowie@example.com',
+        'call' => '123-456-7892',
+      ],
+      [
+        'name' => 'Rick Morty',
+        'designation' => 'Developer',
+        'role' => 'Engineering',
+        'email' => 'rick.morty@example.com',
+        'call' => '123-456-7893',
+      ],
+      [
+        'name' => 'Martin',
+        'designation' => 'Designer',
+        'role' => 'Design',
+        'email' => 'martin@example.com',
+        'call' => '123-456-7894',
+      ],
+      [
+        'name' => 'Alex Smith',
+        'designation' => 'Developer',
+        'role' => 'Engineering',
+        'email' => 'alex.smith@example.com',
+        'call' => '123-456-7895',
+      ],
+      [
+        'name' => 'George Lucas',
+        'designation' => 'QA Engineer',
+        'role' => 'Quality Assurance',
+        'email' => 'george.lucas@example.com',
+        'call' => '123-456-7896',
+      ],
+      [
+        'name' => 'Markus',
+        'designation' => 'Director',
+        'role' => 'Support',
+        'email' => 'markus@example.com',
+        'call' => '123-456-7897',
+      ],
+      [
+        'name' => 'Allen John',
+        'designation' => 'Business Analyst',
+        'role' => 'Strategy',
+        'email' => 'allen.john@example.com',
+        'call' => '123-456-7898',
+      ],
+      [
+        'name' => 'Jinny',
+        'designation' => 'Media Manager',
+        'role' => 'Marketing',
+        'email' => 'jinny@example.com',
+        'call' => '123-456-7899',
+      ],
+    ];
+    
+    foreach ($namesList as $key => $list) {
+      $items[] = $this->buildElementPersonCard(
+        $this->getPlaceholderPersonImage(100),
+        'The image alt ' . $list['name'],
+        $list['name'],
+        $list['designation'],
+        $list['role'],
+        $emailcall = ['email' => $list['email'], 'call' => $list['call']],
+      );
+
+    }
+
+    return $this->buildElementPersonCards(
       $this->getRandomTitle(),
       $this->buildProcessedText('This is a directory list of awesome people'),
       $items,
