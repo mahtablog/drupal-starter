@@ -1,0 +1,74 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 343f341d-52a8-4231-95eb-f9695d70d602
+  bundle: group
+  default_langcode: en
+  depends:
+    11318276-1099-48d3-ae54-1e4746558d2e: user
+    227b41f7-b7b5-4f3c-b399-034494c83fda: media
+default:
+  revision_uid:
+    -
+      entity: 11318276-1099-48d3-ae54-1e4746558d2e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 11318276-1099-48d3-ae54-1e4746558d2e
+  title:
+    -
+      value: 'Drupal University'
+  created:
+    -
+      value: 1744777237
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Drupal University | Drupal Starter'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "Welcome to Drupal University — your hub for mastering Drupal and building meaningful digital experiences.Whether you're just starting out or a seasoned developer, this group provides structured learning, community collaboration, and shared resources to help you grow your skills. From hands-on tutorials and deep dives into core systems, to best practices in theming, content architecture, and DevOps — we've got you covered."
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://drupal-starter.ddev.site:4443/community/drupal-university'
+    -
+      tag: meta
+      attributes:
+        property: 'og:title'
+        content: 'Drupal University'
+  path:
+    -
+      alias: /community/drupal-university
+      langcode: en
+      pathauto: 0
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: "<p><strong>Welcome to Drupal University</strong> — your hub for mastering Drupal and building meaningful digital experiences.</p><p>Whether you're just starting out or a seasoned developer, this group provides structured learning, community collaboration, and shared resources to help you grow your skills. From hands-on tutorials and deep dives into core systems, to best practices in theming, content architecture, and DevOps — we've got you covered.</p><h3>&nbsp;What You’ll Find Here</h3><ul><li>Weekly learning challenges and walkthroughs</li><li>Curated resources and code examples</li><li>Group discussions on Drupal best practices</li><li>Support from peers and mentors</li><li>Opportunities to showcase your work</li></ul><h3>&nbsp;Let’s Build Together</h3><p>Introduce yourself, join a topic thread, or contribute to an ongoing project. This is a space where we learn by building — and we welcome everyone with a curious mind and a willingness to share.</p><p><em>Join us in advancing the open web — one Drupal site at a time.</em></p>"
+      format: basic_html
+      summary: ''
+  field_featured_image:
+    -
+      entity: 227b41f7-b7b5-4f3c-b399-034494c83fda
