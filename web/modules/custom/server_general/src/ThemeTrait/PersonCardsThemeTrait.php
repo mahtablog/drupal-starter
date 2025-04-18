@@ -57,7 +57,7 @@ trait PersonCardsThemeTrait {
       '#theme' => 'image',
       '#uri' => $image_url,
       '#alt' => $alt,
-      '#width' => 100,
+      '#width' => 128,
     ];
 
     $elements[] = $this->wrapRoundedCornersFull($element);
