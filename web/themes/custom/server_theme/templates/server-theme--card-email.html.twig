@@ -1,6 +1,5 @@
 <div class="w-1/2 p-4 border-r border-gray-300">
-    <a href="mailto:{{ emailid }}" class="block text-center font-semibold flex align-center justify-center gap-2">
-       {% set directory = 'themes/custom/server_theme' %}
+    <a href="mailto:{{ emailid }}" class="flex items-center justify-center gap-2 text-center">
        <img class="cursor-pointer" src="/{{ directory }}/dist/images/mail.svg" alt="{{ 'Mail icon'|t }}">
        {{ label }}
     </a>

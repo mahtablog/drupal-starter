@@ -65,7 +65,9 @@ trait PersonCardsThemeTrait {
     $inner_elements = [];
 
     $element = $this->wrapTextFontWeight($name, 'bold');
-    $inner_elements[] = $this->wrapTextCenter($element);
+    $element = $this->wrapTextCenter($element);
+    $inner_elements[] = $this->wrapTextColor($element, 'dark-gray');
+
 
     if ($subtitle) {
       $element = $this->wrapTextResponsiveFontSize($subtitle, 'sm');
@@ -82,7 +84,7 @@ trait PersonCardsThemeTrait {
 
     $elements[] = $this->wrapContainerVerticalSpacingTiny($inner_elements, 'center');
 
-    $emailcall_elements[] = $this->wrapEmailCall($emailcall);
+    $emailcall_elements[] = $this->wrapEmailCall($emailcall, 'text-gray-500');
     $elements[] = $this->wrapContainerVerticalSpacing($emailcall_elements, 'center', 'full');
 
     return $this->buildInnerElementLayoutCentered($elements, 'pt-4');

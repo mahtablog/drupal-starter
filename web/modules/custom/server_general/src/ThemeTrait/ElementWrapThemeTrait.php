@@ -613,7 +613,7 @@ trait ElementWrapThemeTrait {
       return [];
     }
     return [
-      '#theme' => 'server_theme__email',
+      '#theme' => 'server_theme__card_email',
       '#emailid' => $emailid,
       '#label' => $label,
     ];
@@ -625,7 +625,7 @@ trait ElementWrapThemeTrait {
       return [];
     }
     return [
-      '#theme' => 'server_theme__call',
+      '#theme' => 'server_theme__card_call',
       '#phone' => $phonenumber,
       '#label' => $label,
     ];
@@ -640,7 +640,7 @@ trait ElementWrapThemeTrait {
    * @return array
    *   Render array.
    */
-  protected function wrapEmailCall(array|TranslatableMarkup $element): array {
+  protected function wrapEmailCall(array|TranslatableMarkup $element, ?string $color = NULL): array {
     $element = $this->filterEmptyElements($element);
     if (empty($element) ) {
       return [];
@@ -653,8 +653,9 @@ trait ElementWrapThemeTrait {
     }
 
     return [
-      '#theme' => 'server_theme__email_call',
+      '#theme' => 'server_theme__card_email_call',
       '#element' => $element,
+      '#color' => $color,
     ];
   }
 

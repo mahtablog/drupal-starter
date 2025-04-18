@@ -521,23 +521,24 @@ function server_theme_theme() {
     'variables' => [],
   ];
 
-  $info['server_theme__email'] = [
+  $info['server_theme__card_email'] = [
     'variables' => [
       'emailid' => NULL,
       'label' => NULL,
     ],
   ];
 
-  $info['server_theme__call'] = [
+  $info['server_theme__card_call'] = [
     'variables' => [
       'phone' => NULL,
       'label' => NULL,
     ],
   ];
   // Wrap Email and Call style.
-  $info['server_theme__email_call'] = [
+  $info['server_theme__card_email_call'] = [
     'variables' => [
       'element' => [],
+      'color' => NULL,
     ],
   ];
   // Wrapper for a text, adding background color.
