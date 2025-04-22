@@ -1,12 +1,14 @@
-{% macro getClass(align) %}
+{% macro getClass(align, width) %}
   {% set classes = [
     'flex flex-col gap-3 md:gap-5',
     align == 'start' ? 'items-start',
     align == 'center' ? 'items-center',
     align == 'end' ? 'items-end',
+    width == 'full' ? 'w-full',
+    width == 'half' ? 'w-1/2',
   ] | join(' ') | trim %}
   {{ classes }}
 {% endmacro %}
-<div class="{{ _self.getClass(align) }}">
+<div class="{{ _self.getClass(align, width) }}">
   {{ items }}
 </div>

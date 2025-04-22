@@ -1,0 +1,10 @@
+{% set classes = [
+  'flex flex-col md:flex-row gap-y-5 sm:gap-x-10 md:gap-x-14',
+] | join(' ') | trim %}
+
+<div class="{{ classes }}">
+
+  <div class="w-full">
+    {{ main }}
+  </div>
+</div>

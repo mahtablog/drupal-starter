@@ -145,6 +145,13 @@ function server_theme_theme() {
     ],
   ];
 
+  // Used to place elements inside a main area, and other elements in a sidebar.
+  $info['server_theme_element_layout__main_without_sidebar'] = [
+    'variables' => [
+      'main' => [],
+    ],
+  ];
+
   // Split the screen in half. First the image, then content. Used for example
   // for a "Quote" element.
   $info['server_theme_element_layout__split_image_and_content'] = [
@@ -511,6 +518,14 @@ function server_theme_theme() {
     'variables' => [],
   ];
 
+  $info['server_theme_subscription_prompt'] = [
+    'variables' => [
+      'user_name' => NULL,
+      'link' => NULL,
+      'group_name' => NULL,
+    ],
+  ];
+  
   return $info;
 }
 
